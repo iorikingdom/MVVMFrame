@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_exit_app">もう一度押すと終了します</string>
+    <string name="common_loading">ロード中…</string>
+    <string name="no_net_work">現在利用可能なネットワークがありません。ネットワーク状況を確認してください。</string>
+    <string name="request_error_code_400">異常要求を送信しました</string>
+    <string name="request_error_code_401">操作が許可されていません</string>
+    <string name="request_error_code_403">サーバが要求を拒否しました</string>
+    <string name="request_error_code_404">サーバが要求されたURLを見つけられませんでした</string>
+    <string name="request_error_code_405">使用不可の要求方法</string>
+    <string name="request_error_code_408">タイムアウトを要求します</string>
+    <string name="request_error_code_413">要求エンティティが大きすぎます</string>
+    <string name="request_error_code_414">要求URLが長すぎます</string>
+    <string name="request_error_code_500">サーバ内部エラー</string>
+    <string name="request_error_code_503">サーバが利用できません</string>
+    <string name="request_error_code_default">ネットワークエラー</string>
+    <string name="request_error_message_1000">未知のエラー</string>
+    <string name="request_error_message_1001">解析エラー</string>
+    <string name="request_error_message_1002">接続に失敗しました</string>
+    <string name="request_error_message_1005">証明書の検証に失敗しました</string>
+    <string name="request_error_message_1006">接続タイムアウト</string>
+    <string name="request_error_message_1007">ホストアドレスが不明です</string>
+
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">予期せぬエラーが発生しました。\nすみません、ご迷惑をおかけしました。</string>
+    <string name="customactivityoncrash_error_activity_restart_app">再起動</string>
+    <string name="customactivityoncrash_error_activity_close_app">プログラムを閉じる</string>
+    <string name="customactivityoncrash_error_activity_error_details">エラーログ</string>
+    <string name="customactivityoncrash_error_activity_error_details_title">エラーの詳細</string>
+    <string name="customactivityoncrash_error_activity_error_details_close">閉じる</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy">ログをコピー</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied">ログをコピー</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">エラーメッセージ</string>
+</resources>

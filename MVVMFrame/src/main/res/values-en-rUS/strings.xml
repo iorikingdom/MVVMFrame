@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_exit_app">Tap once more to quit</string>
+    <string name="common_loading">Loading…</string>
+    <string name="no_net_work">Current network is unavailable, please check your connection</string>
+    <string name="request_error_code_400">An exception request was sent</string>
+    <string name="request_error_code_401">Operation unauthorized</string>
+    <string name="request_error_code_403">The server rejected the request</string>
+    <string name="request_error_code_404">The server could not find the requested URL</string>
+    <string name="request_error_code_405">Request methods that are not allowed to be used</string>
+    <string name="request_error_code_408">request timeout</string>
+    <string name="request_error_code_413">Excessive size of requesting entity</string>
+    <string name="request_error_code_414">Request URL is too long</string>
+    <string name="request_error_code_500">Server internal error</string>
+    <string name="request_error_code_503">Server unavailable</string>
+    <string name="request_error_code_default">network error</string>
+    <string name="request_error_message_1000">unknown error</string>
+    <string name="request_error_message_1001">Parsing error</string>
+    <string name="request_error_message_1002">Connection failed</string>
+    <string name="request_error_message_1005">Certificate verification failed</string>
+    <string name="request_error_message_1006">Connection timed out</string>
+    <string name="request_error_message_1007">Host address unknown</string>
+
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience.</string>
+    <string name="customactivityoncrash_error_activity_restart_app">Restart</string>
+    <string name="customactivityoncrash_error_activity_close_app">Close Program</string>
+    <string name="customactivityoncrash_error_activity_error_details">Error log</string>
+    <string name="customactivityoncrash_error_activity_error_details_title">Error Details</string>
+    <string name="customactivityoncrash_error_activity_error_details_close">Close</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy">Copy logs</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied">Copy logs</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">Error Message</string>
+</resources>
