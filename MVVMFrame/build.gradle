@@ -84,5 +84,8 @@ dependencies {
     api rootProject.ext.dependencies["room_runtime"]
     annotationProcessor rootProject.ext.dependencies["room_compiler"]
     api rootProject.ext.dependencies["room_rxjava2"]
+    //SmartRefreshLayout
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+    api rootProject.ext.dependencies["SmartRefreshHeader"]
 
 }
