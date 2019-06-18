@@ -3,7 +3,6 @@ package com.wangxing.code.mvvm.http;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
-import com.wangxing.code.mvvm.BuildConfig;
 import com.wangxing.code.mvvm.utils.ContextUtils;
 
 import java.lang.reflect.Field;
@@ -22,6 +21,7 @@ public class RetrofitClient {
 
     private static volatile RetrofitClient sInstance;
     private static String baseUrl = null;
+    private static boolean httpLog;
 
     private Retrofit mRetrofit;
 
@@ -43,12 +43,14 @@ public class RetrofitClient {
         try {
             aClass = Class.forName(ContextUtils.getContext().getPackageName() + ".Const");
             Field base_url = aClass.getDeclaredField("BASE_URL");
+            Field http_log = aClass.getDeclaredField("HTTP_LOG");
             baseUrl = base_url.get(aClass).toString();
+            httpLog = Boolean.valueOf(http_log.get(aClass).toString());
         } catch (Exception e) {
             if (e instanceof ClassNotFoundException) {
                 e = new ClassNotFoundException("Const.class Must be under the package name");
             } else if (e instanceof NoSuchFieldException) {
-                e = new NoSuchFieldException("The default address name must be BASE_URL");
+                e = new NoSuchFieldException("The default address name must be BASE_URL and httpLog must be HTTP_LOG");
             } else if (e instanceof IllegalAccessException) {
                 e = new IllegalAccessException("The default address type must be String.class");
             }
@@ -63,7 +65,7 @@ public class RetrofitClient {
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true)
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(httpLog ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
                 .cookieJar(cookieJar)
                 .build();
 
