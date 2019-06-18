@@ -174,6 +174,11 @@
     </declare-styleable>
 
     <declare-styleable name="BottomBar">
-        <attr name="OnTabSelectListener"/>
+        <attr name="OnTabSelectListener" />
+    </declare-styleable>
+
+    <declare-styleable name="RefreshLayout">
+        <attr name="OnRefreshListener" format="reference" />
+        <attr name="OnLoadMoreListener" format="reference" />
     </declare-styleable>
 </resources>
