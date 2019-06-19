@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.StyleRes;
 import android.support.annotation.UiThread;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,6 +44,9 @@ public class VMDialogUtil {
         lp.gravity = builder.gravity;
         lp.width = builder.width;
         lp.height = builder.height;
+        if (builder.windowAnimations != 0) {
+            lp.windowAnimations = builder.windowAnimations;
+        }
         mDialog.getWindow().setAttributes(lp);
         mDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         return mDialog;
@@ -68,6 +72,8 @@ public class VMDialogUtil {
         protected int width = WindowManager.LayoutParams.MATCH_PARENT;
 
         protected int height = WindowManager.LayoutParams.MATCH_PARENT;
+
+        protected int windowAnimations = 0;
 
         public Builder(@NonNull Context context) {
             this.context = context;
@@ -110,6 +116,11 @@ public class VMDialogUtil {
 
         public Builder setHeight(int height) {
             this.height = height;
+            return this;
+        }
+
+        public Builder setWindowAnimations(@StyleRes int windowAnimations) {
+            this.windowAnimations = windowAnimations;
             return this;
         }
 
