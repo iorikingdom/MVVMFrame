@@ -12,7 +12,7 @@ public class ViewAdapter {
      */
     @SuppressWarnings("unchecked")
     @BindingAdapter(value = {"onCheckedChangedCommand"}, requireAll = false)
-    public static void setCheckedChanged(final CheckBox checkBox, final BindingCommand<Boolean> bindingCommand) {
+    public static void onCheckedChangedCommand(final CheckBox checkBox, final BindingCommand<Boolean> bindingCommand) {
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
