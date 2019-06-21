@@ -19,8 +19,8 @@ public class ViewAdapter {
      * @param refreshLayout
      * @param OnRefreshListener
      */
-    @BindingAdapter(value = {"OnRefreshListener"}, requireAll = false)
-    public static void OnRefreshListener(SmartRefreshLayout refreshLayout, final BindingCommand<RefreshLayout> OnRefreshListener) {
+    @BindingAdapter(value = {"onRefreshListener"}, requireAll = false)
+    public static void onRefreshListener(SmartRefreshLayout refreshLayout, final BindingCommand<RefreshLayout> OnRefreshListener) {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
@@ -36,8 +36,8 @@ public class ViewAdapter {
      * @param refreshLayout
      * @param OnLoadMoreListener
      */
-    @BindingAdapter(value = {"OnLoadMoreListener"}, requireAll = false)
-    public static void OnLoadMoreListener(SmartRefreshLayout refreshLayout, final BindingCommand<RefreshLayout> OnLoadMoreListener) {
+    @BindingAdapter(value = {"onLoadMoreListener"}, requireAll = false)
+    public static void onLoadMoreListener(SmartRefreshLayout refreshLayout, final BindingCommand<RefreshLayout> OnLoadMoreListener) {
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {

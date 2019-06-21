@@ -178,7 +178,7 @@
     </declare-styleable>
 
     <declare-styleable name="RefreshLayout">
-        <attr name="OnRefreshListener" format="reference" />
-        <attr name="OnLoadMoreListener" format="reference" />
+        <attr name="onRefreshListener" format="reference" />
+        <attr name="onLoadMoreListener" format="reference" />
     </declare-styleable>
 </resources>
