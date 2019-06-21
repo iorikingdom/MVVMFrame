@@ -22,7 +22,7 @@ public class ViewAdapter {
 //    public static LayoutManagers.LayoutManagerFactory gridContainHeader(final int spanCount) {
 //        return new LayoutManagers.LayoutManagerFactory() {
 //            @Override
-//            public RecyclerView.LayoutManager create(RecyclerView recyclerView) {
+//            public RecyclerView.LayoutManagers create(RecyclerView recyclerView) {
 //                GridLayoutManager gridLayoutManager = new GridLayoutManager(recyclerView.getContext(), spanCount);
 //                gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
 //                    @Override

@@ -87,5 +87,7 @@ dependencies {
     //SmartRefreshLayout
     api rootProject.ext.dependencies["SmartRefreshLayout"]
     api rootProject.ext.dependencies["SmartRefreshHeader"]
+    //RecyclerView Flow效果
+    api rootProject.ext.dependencies["flexbox"]
 
 }

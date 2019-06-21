@@ -71,7 +71,9 @@ ext {
             "room_rxjava2"                          : "android.arch.persistence.room:rxjava2:1.1.1",
             //SmartRefreshLayout
             "SmartRefreshLayout"                    : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-28",
-            "SmartRefreshHeader"                    : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-28"
+            "SmartRefreshHeader"                    : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-28",
+            //RecyclerView Flow效果
+            "flexbox"                               : 'com.google.android:flexbox:1.0.0'
     ]
 }
 
