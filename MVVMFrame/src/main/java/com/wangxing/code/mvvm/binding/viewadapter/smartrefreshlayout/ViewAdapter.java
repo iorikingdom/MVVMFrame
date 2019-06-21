@@ -1,4 +1,4 @@
-package com.wangxing.code.mvvm.binding.viewadapter.refreshlayout;
+package com.wangxing.code.mvvm.binding.viewadapter.smartrefreshlayout;
 
 import android.databinding.BindingAdapter;
 import android.support.annotation.NonNull;

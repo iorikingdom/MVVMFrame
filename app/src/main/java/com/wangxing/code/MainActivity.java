@@ -1,16 +1,20 @@
 package com.wangxing.code;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.wangxing.code.mvvm.http.RetrofitClient;
+import com.wangxing.code.databinding.ActivityMainBinding;
+import com.wangxing.code.mvvm.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        RetrofitClient.getInstance();
+    public int initContentView(Bundle savedInstanceState) {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public int initVariableId() {
+        return BR.viewModel;
     }
 }
