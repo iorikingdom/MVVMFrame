@@ -8,21 +8,19 @@ import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.flexbox.JustifyContent;
 
+import me.tatarka.bindingcollectionadapter2.LayoutManagers;
+
 /**
  * Created by WangXing on 2019/6/20.
  */
-public class LayoutManagers {
+public class FlexBoxLayoutManager extends LayoutManagers {
 
-    protected LayoutManagers() {
-    }
-
-    public interface LayoutManagerFactory {
-        RecyclerView.LayoutManager create(RecyclerView recyclerView);
+    protected FlexBoxLayoutManager() {
     }
 
 
-    public static LayoutManagers.LayoutManagerFactory flexbox() {
-        return new LayoutManagers.LayoutManagerFactory() {
+    public static FlexBoxLayoutManager.LayoutManagerFactory flexbox() {
+        return new FlexBoxLayoutManager.LayoutManagerFactory() {
             @Override
             public RecyclerView.LayoutManager create(RecyclerView recyclerView) {
                 FlexboxLayoutManager flexboxLayoutManager = new FlexboxLayoutManager(recyclerView.getContext());
