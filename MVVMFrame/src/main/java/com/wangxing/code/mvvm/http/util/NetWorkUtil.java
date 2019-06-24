@@ -1,4 +1,4 @@
-package com.wangxing.code.mvvm.http;
+package com.wangxing.code.mvvm.http.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

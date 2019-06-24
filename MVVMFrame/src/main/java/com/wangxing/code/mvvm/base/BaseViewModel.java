@@ -14,6 +14,7 @@ import com.wangxing.code.mvvm.base.event.SingleLiveEvent;
 import com.wangxing.code.mvvm.http.ApiCallBack;
 import com.wangxing.code.mvvm.utils.ContextUtils;
 import com.wangxing.code.mvvm.utils.KLog;
+import com.wangxing.code.mvvm.utils.RxUtils;
 import com.wangxing.code.mvvm.utils.StringUtils;
 import com.wangxing.code.mvvm.utils.TypeUtil;
 
@@ -39,7 +40,6 @@ public abstract class BaseViewModel<M> extends AndroidViewModel implements Lifec
     //model层
     public M model;
     public UIChangeLiveData uc;
-
 
     //弱引用持有
     public WeakReference<LifecycleProvider> lifecycle;
@@ -278,7 +278,7 @@ public abstract class BaseViewModel<M> extends AndroidViewModel implements Lifec
      * @param hasLoading     是否加载
      * @param <T>
      */
-    public <T> void request(Observable<T> observable, ApiCallBack apiCallBack, final String loadingMessage, final boolean hasLoading) {
+    public <T> void request(final Observable<T> observable, ApiCallBack apiCallBack, final String loadingMessage, final boolean hasLoading) {
         observable
                 .compose(schedulersTransformer()) //线程调度
 //                .compose(RxUtils.exceptionTransformer()) // 网络错误的异常转换

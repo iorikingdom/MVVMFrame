@@ -1,4 +1,4 @@
-package com.wangxing.code.mvvm.http;
+package com.wangxing.code.mvvm.http.base;
 
 import com.google.gson.annotations.SerializedName;
 

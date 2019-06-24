@@ -1,5 +1,7 @@
 package com.wangxing.code.mvvm.http;
 
+import com.wangxing.code.mvvm.http.base.BaseResponse;
+
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
