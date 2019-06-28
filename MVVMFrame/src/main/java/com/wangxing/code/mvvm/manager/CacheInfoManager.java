@@ -6,7 +6,7 @@ import com.wangxing.code.mvvm.utils.ACache;
  * Created by WangXing on 2019/6/18.
  * 可根据项目需要自行更改
  */
-public class UserInfoManager {
+public class CacheInfoManager {
 
     /**
      * 用户信息Key
@@ -33,16 +33,16 @@ public class UserInfoManager {
 
     private static final String USER_PASSWORD = "userPassword";
 
-    private static volatile UserInfoManager sInstance;
+    private static volatile CacheInfoManager sInstance;
 
-    private UserInfoManager() {
+    private CacheInfoManager() {
     }
 
-    public static UserInfoManager getInstance() {
+    public static CacheInfoManager getInstance() {
         if (sInstance == null) {
-            synchronized (UserInfoManager.class) {
+            synchronized (CacheInfoManager.class) {
                 if (sInstance == null) {
-                    sInstance = new UserInfoManager();
+                    sInstance = new CacheInfoManager();
                 }
             }
         }
@@ -136,4 +136,17 @@ public class UserInfoManager {
     public void saveUserPassword(String userPassword) {
         ACache.get().put(USER_PASSWORD, userPassword);
     }
+
+    public void clearCache() {
+        ACache.get().clear();
+    }
+
+    public void saveKeyValue(String key, String value) {
+        ACache.get().put(key, value);
+    }
+
+    public String getValue(String key) {
+        return ACache.get().getAsString(key);
+    }
+
 }
