@@ -21,6 +21,11 @@
     <string name="request_error_message_1006">Connection timed out</string>
     <string name="request_error_message_1007">Host address unknown</string>
 
+
+    <string name="empty_view_hint">No data available for the time being</string>
+    <string name="error_view_hint">Load failure</string>
+    <string name="no_network_view_hint">Network anomaly</string>
+
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience.</string>
     <string name="customactivityoncrash_error_activity_restart_app">Restart</string>
     <string name="customactivityoncrash_error_activity_close_app">Close Program</string>

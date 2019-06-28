@@ -182,8 +182,17 @@
         <attr name="OnTabSelectListener" />
     </declare-styleable>
 
-    <declare-styleable name="RefreshLayout">
+    <declare-styleable name="SmartRefreshLayout">
         <attr name="onRefreshListener" format="reference" />
         <attr name="onLoadMoreListener" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="MultiStatusLayout">
+        <attr name="loadingView" format="reference"/>
+        <attr name="errorView" format="reference"/>
+        <attr name="emptyView" format="reference"/>
+        <attr name="noNetworkView" format="reference"/>
+        <attr name="contentView" format="reference"/>
+    </declare-styleable>
+
 </resources>

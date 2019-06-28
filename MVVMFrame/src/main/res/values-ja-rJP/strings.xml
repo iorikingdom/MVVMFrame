@@ -21,6 +21,10 @@
     <string name="request_error_message_1006">接続タイムアウト</string>
     <string name="request_error_message_1007">ホストアドレスが不明です</string>
 
+    <string name="empty_view_hint">データがありません</string>
+    <string name="error_view_hint">読み込みに失敗しました</string>
+    <string name="no_network_view_hint">ネットワーク異常</string>
+
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">予期せぬエラーが発生しました。\nすみません、ご迷惑をおかけしました。</string>
     <string name="customactivityoncrash_error_activity_restart_app">再起動</string>
     <string name="customactivityoncrash_error_activity_close_app">プログラムを閉じる</string>

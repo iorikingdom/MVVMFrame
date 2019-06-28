@@ -19,13 +19,19 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="点我"
-            android:checked="@{viewModel.aBoolean}"
-            binding:onCheckedChangedCommand="@{viewModel.command}" />
+        <com.wangxing.code.mvvm.view.MultiStatusLayout
+            android:id="@+id/multiply"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/content_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+        </com.wangxing.code.mvvm.view.MultiStatusLayout>
 
     </RelativeLayout>
 </layout>
