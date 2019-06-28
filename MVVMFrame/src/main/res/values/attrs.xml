@@ -103,8 +103,13 @@
         <attr name="layoutManager" format="reference" />
         <attr name="itemAnimator" format="reference" />
     </declare-styleable>
+
     <declare-styleable name="RadioGroup">
-        <attr name="onCheckedChangedCommand" format="reference" />
+        <attr name="onRadioGroupChangedCommand" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CheckBox">
+        <attr name="onCheckBoxChangedCommand" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="Spinner">

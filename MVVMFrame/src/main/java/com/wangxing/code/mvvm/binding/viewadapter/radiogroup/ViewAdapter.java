@@ -9,8 +9,8 @@ import com.wangxing.code.mvvm.binding.command.BindingCommand;
 
 
 public class ViewAdapter {
-    @BindingAdapter(value = {"onCheckedChangedCommand"}, requireAll = false)
-    public static void onCheckedChangedCommand(final RadioGroup radioGroup, final BindingCommand<RadioButton> bindingCommand) {
+    @BindingAdapter(value = {"onRadioGroupChangedCommand"}, requireAll = false)
+    public static void onRadioGroupChangedCommand(final RadioGroup radioGroup, final BindingCommand<RadioButton> bindingCommand) {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
