@@ -23,9 +23,18 @@ public class ResponseThrowable extends Exception {
         }
     }
 
-    public void handleCode(Map<Integer, String> map) {
-        ToastUtils.showShort(map.get(code));
-
+    /**
+     * 处理服务器状态码Toast对应message
+     * @param map
+     * @return
+     */
+    public boolean handleCode(Map<Integer, String> map) {
+        if (map.containsKey(code)) {
+            ToastUtils.showShort(map.get(code));
+            return false;
+        }else {
+            return true;
+        }
     }
 
 }
