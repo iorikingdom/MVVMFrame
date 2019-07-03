@@ -34,5 +34,8 @@ public class RequestBodyUtil {
         return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(param));
     }
 
+    public static RequestBody getBody(Object param) {
+        return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(param));
+    }
 
 }
