@@ -26,7 +26,7 @@ public class ResponseThrowable extends Exception {
     /**
      * 处理服务器状态码Toast对应message
      * @param map
-     * @return
+     * @return 用于判断下一步操作
      */
     public boolean handleCode(Map<Integer, String> map) {
         if (map.containsKey(code)) {
