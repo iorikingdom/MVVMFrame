@@ -12,23 +12,9 @@ import okhttp3.RequestBody;
  */
 public class RequestBodyUtil {
 
-//    private static volatile RequestBodyUtil sInstance;
-
     private RequestBodyUtil() {
     }
 
-//    public static RequestBodyUtil getInstance() {
-//        if (sInstance == null) {
-//            Class var0 = RequestBodyUtil.class;
-//            synchronized (RequestBodyUtil.class) {
-//                if (sInstance == null) {
-//                    sInstance = new RequestBodyUtil();
-//                }
-//            }
-//        }
-//
-//        return sInstance;
-//    }
 
     public static RequestBody getBody(Map<String, String> param) {
         return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(param));
