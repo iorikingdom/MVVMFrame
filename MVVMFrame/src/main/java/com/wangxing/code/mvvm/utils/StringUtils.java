@@ -20,6 +20,20 @@ public final class StringUtils {
     }
 
     /**
+     * 处理空值
+     *
+     * @param obj
+     * @return
+     */
+    public static String formatString(Object obj) {
+        if (obj == null) {
+            return "";
+        } else {
+            return String.valueOf(obj);
+        }
+    }
+
+    /**
      * 判断字符串是否为null或全为空格
      *
      * @param s 待校验字符串
