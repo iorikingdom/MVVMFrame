@@ -198,6 +198,13 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
                 Objects.requireNonNull(getActivity()).onBackPressed();
             }
         });
+        //刷新页面
+        viewModel.getUC().getRefreshLayout().observe(this, new Observer() {
+            @Override
+            public void onChanged(@Nullable Object o) {
+                refreshLayout();
+            }
+        });
     }
 
     /**

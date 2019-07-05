@@ -140,6 +140,7 @@ public abstract class BaseViewModel<M> extends AndroidViewModel implements Lifec
         private SingleLiveEvent<Map<String, Object>> startContainerActivityEvent;
         private SingleLiveEvent<Void> finishEvent;
         private SingleLiveEvent<Void> onBackPressedEvent;
+        private SingleLiveEvent<Void> refreshLayout;
 
         public SingleLiveEvent<String> getShowDialogEvent() {
             return showDialogEvent = createLiveData(showDialogEvent);
@@ -163,6 +164,10 @@ public abstract class BaseViewModel<M> extends AndroidViewModel implements Lifec
 
         public SingleLiveEvent<Void> getOnBackPressedEvent() {
             return onBackPressedEvent = createLiveData(onBackPressedEvent);
+        }
+
+        public SingleLiveEvent<Void> getRefreshLayout() {
+            return refreshLayout = createLiveData(refreshLayout);
         }
 
         private SingleLiveEvent createLiveData(SingleLiveEvent liveData) {

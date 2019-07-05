@@ -146,6 +146,13 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
                 onBackPressed();
             }
         });
+        //刷新页面
+        viewModel.getUC().getRefreshLayout().observe(this, new Observer() {
+            @Override
+            public void onChanged(@Nullable Object o) {
+                refreshLayout();
+            }
+        });
     }
 
     //刷新布局

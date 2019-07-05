@@ -40,7 +40,7 @@ dependencies {
         exclude group: 'com.android.support'
     }
     //rx权限请求
-    api(rootProject.ext.dependencies.rxpermissions) {
+    api(rootProject.ext.dependencies.andpermission) {
         exclude group: 'com.android.support'
     }
     //network
