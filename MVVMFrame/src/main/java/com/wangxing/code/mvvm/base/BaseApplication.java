@@ -3,10 +3,15 @@ package com.wangxing.code.mvvm.base;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.StyleRes;
 
 import com.jeremyliao.liveeventbus.LiveEventBus;
+import com.wangxing.code.mvvm.R;
 import com.wangxing.code.mvvm.utils.ContextUtils;
+
+import java.lang.reflect.Field;
 
 /**
  * Created by WangXing on 2019/5/20.
@@ -14,6 +19,7 @@ import com.wangxing.code.mvvm.utils.ContextUtils;
 public class BaseApplication extends Application {
 
     private static Application sInstance;
+    public static int http_loading = 0;
 
     @Override
     public void onCreate() {
@@ -24,6 +30,27 @@ public class BaseApplication extends Application {
                 .supportBroadcast(this)
                 .lifecycleObserverAlwaysActive(true);
         setApplication(this);
+
+        Class<?> aClass = null;
+        try {
+            aClass = Class.forName(ContextUtils.getContext().getPackageName() + ".Const");
+            Field httpLoading = aClass.getDeclaredField("HTTP_LOADING");
+            http_loading = Integer.parseInt(httpLoading.get(aClass).toString());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setHttpLoading(@LayoutRes int layoutRes) {
+        http_loading = layoutRes;
+    }
+
+    public static int getHttpLoading() {
+        return http_loading;
     }
 
     /**
@@ -97,4 +124,22 @@ public class BaseApplication extends Application {
         return sInstance;
     }
 
+    public static int mHttpLoadingRes = R.layout.dialog_loading;
+    public static int mHttpLoadingStyle = R.style.CommonDialog;
+
+    public static int getHttpLoadingRes() {
+        return mHttpLoadingRes;
+    }
+
+    public static void setHttpLoadingRes(@LayoutRes int HttpLoadingRes) {
+        BaseApplication.mHttpLoadingRes = HttpLoadingRes;
+    }
+
+    public static int getHttpLoadingStyle() {
+        return mHttpLoadingStyle;
+    }
+
+    public static void setHttpLoadingStyle(@StyleRes int HttpLoadingStyle) {
+        BaseApplication.mHttpLoadingStyle = HttpLoadingStyle;
+    }
 }

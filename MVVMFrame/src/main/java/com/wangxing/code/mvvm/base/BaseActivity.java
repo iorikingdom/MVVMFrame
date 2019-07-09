@@ -1,5 +1,6 @@
 package com.wangxing.code.mvvm.base;
 
+import android.app.Dialog;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
@@ -7,20 +8,30 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.StyleRes;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.wangxing.code.mvvm.R;
 import com.wangxing.code.mvvm.base.BaseViewModel.ParameterField;
 import com.wangxing.code.mvvm.utils.ContextUtils;
-import com.wangxing.code.mvvm.utils.MaterialDialogUtils;
+import com.wangxing.code.mvvm.utils.StringUtils;
 import com.wangxing.code.mvvm.utils.ToastUtils;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.Objects;
+
+import static com.wangxing.code.mvvm.base.BaseApplication.getHttpLoadingRes;
+import static com.wangxing.code.mvvm.base.BaseApplication.getHttpLoadingStyle;
 
 /**
  * Created by WangXing on 2019/5/27.
@@ -31,7 +42,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     protected V binding;
     protected VM viewModel;
     private int viewModelId;
-    private MaterialDialog dialog;
+    private Dialog dialog;
     private long mExitTimestamp;
 
     @Override
@@ -204,8 +215,8 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         if (dialog != null) {
             dialog.show();
         } else {
-            MaterialDialog.Builder builder = MaterialDialogUtils.showIndeterminateProgressDialog(this, title, true);
-            dialog = builder.show();
+            dialog = initDialog(title);
+            dialog.show();
         }
     }
 
@@ -253,7 +264,8 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         startActivity(new Intent(this, clz));
     }
 
-    /**e
+    /**
+     * e
      * 跳转页面
      *
      * @param clz    所跳转的目的Activity类
@@ -265,6 +277,21 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
             intent.putExtras(bundle);
         }
         startActivity(intent);
+    }
+
+    private Dialog initDialog(String textContent) {
+        Dialog dialog = new Dialog(this, getHttpLoadingStyle());
+        View inflate = LayoutInflater.from(this).inflate(getHttpLoadingRes(), null);
+        TextView text = inflate.findViewById(R.id.id_tv_loading_dialog_text);
+        if (text != null) {
+            if (!StringUtils.isTrimEmpty(textContent)) {
+                text.setText(textContent);
+            }
+        }
+        dialog.setContentView(inflate, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        dialog.setCanceledOnTouchOutside(false);
+        Objects.requireNonNull(dialog.getWindow()).addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        return dialog;
     }
 
 }
