@@ -3,13 +3,14 @@ package com.wangxing.code.mvvm.http;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.ihsanbal.logging.Level;
+import com.ihsanbal.logging.LoggingInterceptor;
 import com.wangxing.code.mvvm.utils.ContextUtils;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -65,7 +66,12 @@ public class RetrofitClient {
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true)
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(httpLog ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
+                .addInterceptor(new LoggingInterceptor.Builder()
+                        .loggable(httpLog)
+                        .setLevel(Level.BASIC)
+                        .request("Request")
+                        .response("Response")
+                        .build())
                 .cookieJar(cookieJar)
                 .build();
 

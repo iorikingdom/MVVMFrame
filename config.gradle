@@ -62,7 +62,7 @@ ext {
             //cookie
             "PersistentCookieJar"                  : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
             //网络请求日志
-            "logging"                              : "com.squareup.okhttp3:logging-interceptor:3.5.0",
+            "logging"                              : "com.github.ihsanbal:LoggingInterceptor:3.0.0",
             //底部导航
             "bottom_bar"                            : "com.roughike:bottom-bar:2.3.1",
             //room

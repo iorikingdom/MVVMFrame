@@ -77,7 +77,9 @@ dependencies {
     //Cookie
     api rootProject.ext.dependencies["PersistentCookieJar"]
     //网络请求日志
-    api rootProject.ext.dependencies["logging"]
+    api(rootProject.ext.dependencies["logging"]) {
+        exclude group: 'org.json', module: 'json'
+    }
     //底部导航
     api rootProject.ext.dependencies["bottom_bar"]
     //room
