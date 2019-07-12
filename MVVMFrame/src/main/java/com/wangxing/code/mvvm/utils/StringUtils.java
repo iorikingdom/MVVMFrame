@@ -30,6 +30,7 @@ public final class StringUtils {
             return "";
         } else {
             return String.valueOf(obj);
+
         }
     }
 
