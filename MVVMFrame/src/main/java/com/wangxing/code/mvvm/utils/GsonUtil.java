@@ -60,70 +60,20 @@ public class GsonUtil {
 
     /**
      * 转成list
-     * 泛型在编译期类型被擦除导致报错
      *
      * @param string
      * @param cls
      * @return
      */
     public static <T> List<T> GsonToList(String string, Class<T[]> cls) {
-        Gson gson = new Gson();
-        T[] array = gson.fromJson(string, cls);
-        return Arrays.asList(array);
-    }
-
-    /**
-     * 处理空值
-     *
-     * @param obj
-     * @return
-     */
-    public static String format(Object obj) {
-        if (obj == null) {
-            return "";
-        } else {
-            return String.valueOf(obj);
-        }
-    }
-
-    public static String format0(Object obj) {
-        if (obj == null) {
-            return "0";
-        } else {
-            return String.valueOf(obj);
-        }
-    }
-
-    public static String format1(Object obj) {
-        if (obj == null) {
-            return "1";
-        } else {
-            return String.valueOf(obj);
-        }
-    }
-
-    public static boolean isEmpty(String str) {
-        return str == null || str.length() <= 0;
-    }
-
-    /**
-     * 转成list
-     * 解决泛型问题
-     *
-     * @param json
-     * @param cls
-     * @param <T>
-     * @return
-     */
-    public <T> List<T> jsonToList(String json, Class<T> cls) {
-        Gson gson = new Gson();
-        List<T> list = new ArrayList<T>();
-        JsonArray array = new JsonParser().parse(json).getAsJsonArray();
-        for (final JsonElement elem : array) {
-            list.add(gson.fromJson(elem, cls));
+        List<T> list = null;
+        if (gson != null) {
+            list = gson.fromJson(string, new TypeToken<List<T>>() {
+            }.getType());
         }
         return list;
     }
+
 
 
     /**

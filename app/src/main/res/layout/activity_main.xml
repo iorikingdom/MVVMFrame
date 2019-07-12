@@ -29,6 +29,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@color/red"
+                    binding:loadWithRound="@{viewModel.field}"
+                    binding:placeholderRes="@drawable/img_placeholder"
+                    binding:round="@{viewModel.anInt}" />
+
             </RelativeLayout>
 
         </com.wangxing.code.mvvm.view.MultiStatusLayout>

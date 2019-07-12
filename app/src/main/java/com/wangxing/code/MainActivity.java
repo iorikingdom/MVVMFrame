@@ -32,12 +32,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         Bean bean = new Bean();
         bean.setI("3");
         RequestBody body = bean.getBody();
-        Observable.interval(1000, TimeUnit.MILLISECONDS)
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
-            @Override
-            public void accept(Long aLong) throws Exception {
-                binding.multiply.showLoading();
-            }
-        });
+//        Observable.interval(1000, TimeUnit.MILLISECONDS)
+//                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
+//            @Override
+//            public void accept(Long aLong) throws Exception {
+//                binding.multiply.showLoading();
+//            }
+//        });
     }
 }
