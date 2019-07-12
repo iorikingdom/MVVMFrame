@@ -1,6 +1,7 @@
 package com.wangxing.code.mvvm.http.body;
 
 import com.google.gson.Gson;
+import com.wangxing.code.mvvm.utils.GsonUtil;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -17,7 +18,7 @@ public class BaseRequestBody {
     }
 
     public RequestBody getBody() {
-        return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(body));
+        return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), GsonUtil.GsonString(body));
     }
 
 }
