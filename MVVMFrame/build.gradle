@@ -83,9 +83,9 @@ dependencies {
     //底部导航
     api rootProject.ext.dependencies["bottom_bar"]
     //room
-    api rootProject.ext.dependencies["room_runtime"]
+//    api rootProject.ext.dependencies["room_runtime"]
 //    annotationProcessor rootProject.ext.dependencies["room_compiler"]
-    api rootProject.ext.dependencies["room_rxjava2"]
+//    api rootProject.ext.dependencies["room_rxjava2"]
     //SmartRefreshLayout
     api rootProject.ext.dependencies["SmartRefreshLayout"]
     api rootProject.ext.dependencies["SmartRefreshHeader"]
