@@ -179,7 +179,6 @@
     </declare-styleable>
 
     <declare-styleable name="BottomBar">
-        <attr name="OnTabSelectListener" />
     </declare-styleable>
 
     <declare-styleable name="SmartRefreshLayout">
